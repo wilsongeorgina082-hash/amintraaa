@@ -1,0 +1,164 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* ------------------------------------------------------------------
+   AMINTRA — Design system
+   Quiet luxury · pearl white canvas · sky-blue accent · editorial calm
+------------------------------------------------------------------- */
+
+@theme {
+  /* Surfaces */
+  --color-pearl: #f8f7f2;
+  --color-surface: #eaf4fa;
+  --color-line: #e2e8ed;
+
+  /* Text */
+  --color-ink: #17212b;
+  --color-muted-ink: #66737d;
+
+  /* Brand — sky blue */
+  --color-sky-50: #f2f9fd;
+  --color-sky-100: #eaf4fa;
+  --color-sky-200: #d3eaf6;
+  --color-sky-300: #b4ddf0;
+  --color-sky-400: #79bfe8;
+  --color-sky-500: #79bfe8;
+  --color-sky-600: #4a9fcc;
+  --color-sky-700: #3b85ad;
+  --color-sky-800: #2f6a8c;
+  --color-sky-900: #244f69;
+
+  /* Charcoal for quiet dark blocks */
+  --color-espresso: #17212b;
+  --color-espresso-soft: #22303d;
+
+  /* Accents used only inside rendered portfolio previews
+     (each mini-site has its own brand palette) */
+  --color-ember-300: #dc9f76;
+  --color-ember-400: #d07b4c;
+  --color-ember-500: #c85c32;
+  --color-ember-600: #a94725;
+  --color-taupe: #756b63;
+  --color-moss: #57624a;
+  --color-rosewood: #9c5f52;
+  --color-blush: #ead9cd;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-dm), ui-sans-serif, system-ui, -apple-system,
+    "Segoe UI", sans-serif;
+  --font-display: var(--font-instrument), ui-serif, Georgia, "Times New Roman",
+    serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+:root {
+  --radius: 0.75rem;
+  --background: #f8f7f2;
+  --foreground: #17212b;
+  --card: #ffffff;
+  --card-foreground: #17212b;
+  --popover: #ffffff;
+  --popover-foreground: #17212b;
+  --primary: #4a9fcc;
+  --primary-foreground: #ffffff;
+  --secondary: #eaf4fa;
+  --secondary-foreground: #17212b;
+  --muted: #eaf4fa;
+  --muted-foreground: #66737d;
+  --accent: #eaf4fa;
+  --accent-foreground: #17212b;
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: #e2e8ed;
+  --input: #dce4ea;
+  --ring: #4a9fcc;
+  --chart-1: #4a9fcc;
+  --chart-2: #79bfe8;
+  --chart-3: #66737d;
+  --chart-4: #d3eaf6;
+  --chart-5: #17212b;
+  --sidebar: #f8f7f2;
+  --sidebar-foreground: #17212b;
+  --sidebar-primary: #4a9fcc;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #eaf4fa;
+  --sidebar-accent-foreground: #17212b;
+  --sidebar-border: #e2e8ed;
+  --sidebar-ring: #4a9fcc;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 88px;
+  }
+  body {
+    @apply bg-background text-foreground;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+  }
+  ::selection {
+    background-color: #4a9fcc;
+    color: #ffffff;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+}
+
+/* Editorial helpers */
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  /* Small caps meta label used across sections */
+  .meta-label {
+    font-family: var(--font-dm), ui-sans-serif, system-ui, sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+}
